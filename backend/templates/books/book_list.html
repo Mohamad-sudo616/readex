@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books - Readex</title>
+</head>
+<body>
+
+<h1>Readex Library 📚</h1>
+
+{% if books %}
+    <ul>
+    {% for book in books %}
+        <li>
+            <strong>{{ book.title }}</strong><br>
+            Author: {{ book.author }}
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No books available yet.</p>
+{% endif %}
+
+</body>
+</html>
