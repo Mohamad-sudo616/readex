@@ -1,24 +1,74 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Books - Readex</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>Readex Library 📚</h1>
+{% block title %}
+Books | Readex
+{% endblock %}
 
-{% if books %}
-    <ul>
-    {% for book in books %}
-        <li>
-            <strong>{{ book.title }}</strong><br>
-            Author: {{ book.author }}
-        </li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No books available yet.</p>
-{% endif %}
+{% block content %}
 
-</body>
-</html>
+<h1 class="mb-4">📚 Readex Library</h1>
+
+<div class="row g-4">
+
+{% for book in books %}
+
+<div class="col-md-4">
+
+    <div class="card h-100 shadow-sm">
+
+        <img
+            src="{{ book.cover_image.url }}"
+            class="card-img-top"
+            alt="{{ book.title }}"
+            style="height:350px; object-fit:cover;">
+
+        <div class="card-body">
+
+            <h5 class="card-title">
+                {{ book.title }}
+            </h5>
+
+            <p class="text-muted">
+                {{ book.author }}
+            </p>
+
+            <p class="card-text">
+
+                {{ book.description|truncatewords:20 }}
+
+            </p>
+
+        </div>
+
+        <div class="card-footer bg-white border-0">
+
+            <a href="#"
+               class="btn btn-primary w-100">
+
+                View Details
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<div class="col-12">
+
+    <div class="alert alert-info">
+
+        No books available yet.
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

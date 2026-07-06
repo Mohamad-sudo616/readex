@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Readex</title>
-</head>
-<body>
-    <h1>Welcome to Readex 📚</h1>
-    <p>Your Django + Docker ebook project is running successfully.</p>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}
+Home | Readex
+{% endblock %}
+
+{% block content %}
+
+<div class="text-center">
+
+    <h1 class="display-4">📚 Welcome to Readex</h1>
+
+    <p class="lead">
+        Your personal ebook library built with Django and Docker.
+    </p>
+
+    <a href="/books/" class="btn btn-primary btn-lg">
+        Browse Books
+    </a>
+
+</div>
+
+{% endblock %}
