@@ -32,7 +32,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
 
                 <ul class="navbar-nav ms-auto">
-
+                    
+                    <li class="nav-item">
+    <a class="nav-link" href="{% url 'core:contact' %}">
+        Contact
+    </a>
+</li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'core:home' %}">Home</a>
                     </li>
@@ -76,8 +81,21 @@
     <!-- Main Content -->
     <main class="container my-5">
 
-        {% block content %}
-        {% endblock %}
+        
+    {% if messages %}
+
+        {% for message in messages %}
+
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
 
     </main>
 
