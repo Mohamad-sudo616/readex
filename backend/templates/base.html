@@ -108,10 +108,14 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    {% block extra_js %}{% endblock %}
+<!-- Readex Custom CSS -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% block extra_css %}{% endblock %}
 
 </body>
 </html>
