@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +9,10 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Readex Custom CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     {% block extra_css %}{% endblock %}
 </head>
@@ -19,11 +24,7 @@
 
             <a class="navbar-brand" href="{% url 'core:home' %}">📚 Readex</a>
 
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
 
                 <span class="navbar-toggler-icon"></span>
 
@@ -32,12 +33,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
 
                 <ul class="navbar-nav ms-auto">
-                    
+
                     <li class="nav-item">
-    <a class="nav-link" href="{% url 'core:contact' %}">
-        Contact
-    </a>
-</li>
+                        <a class="nav-link" href="{% url 'core:contact' %}">
+                            Contact
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'core:home' %}">Home</a>
                     </li>
@@ -50,24 +51,24 @@
 
 
                     <li class="nav-item">
-    <span class="navbar-text me-3">
-        Hello, {{ user.username }}
-    </span>
-</li>
+                        <span class="navbar-text me-3">
+                            Hello, {{ user.username }}
+                        </span>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'users:logout' %}">Logout</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'users:logout' %}">Logout</a>
+                    </li>
 
                     {% else %}
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'users:login' %}">Login</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'users:login' %}">Login</a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'users:register' %}">Register</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'users:register' %}">Register</a>
+                    </li>
 
                     {% endif %}
 
@@ -81,21 +82,21 @@
     <!-- Main Content -->
     <main class="container my-5">
 
-        
-    {% if messages %}
+
+        {% if messages %}
 
         {% for message in messages %}
 
-            <div class="alert alert-success" role="alert">
-                {{ message }}
-            </div>
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
 
         {% endfor %}
 
-    {% endif %}
+        {% endif %}
 
-    {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
 
     </main>
 
@@ -108,14 +109,13 @@
         </div>
     </footer>
 
-    <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Readex Custom CSS -->
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_js %}{% endblock %}
 
-{% block extra_css %}{% endblock %}
 
 </body>
+
 </html>
