@@ -3,12 +3,18 @@ from django.core.mail import send_mail
 from django.shortcuts import render
 
 from .forms import ContactForm
-
+from apps.books.models import Book
 
 def home(request):
-    return render(request, "home.html")
+    featured_books = Book.objects.all()[:6]
 
-
+    return render(
+        request,
+        "home.html",
+        {
+            "featured_books": featured_books,
+        },
+    )
 def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)

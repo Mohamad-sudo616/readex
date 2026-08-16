@@ -144,3 +144,189 @@ a:hover {
     background-color: #b38e1f;
     transform: translateY(-1px);
 }
+
+
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.readex-hero {
+    min-height: 520px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 5rem 1.5rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(31, 58, 95, 0.06),
+            rgba(201, 162, 39, 0.08)
+        );
+
+    border-radius: 18px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Decorative background shape */
+
+.readex-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(201, 162, 39, 0.08);
+
+    top: -120px;
+    right: -100px;
+}
+
+
+/* Hero content */
+
+.readex-hero-content {
+    max-width: 760px;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Small label */
+
+.readex-hero-label {
+    display: inline-block;
+
+    color: var(--readex-primary);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 1.25rem;
+}
+
+
+/* Main heading */
+
+.readex-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+    font-weight: 700;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 1.5rem;
+}
+
+
+/* Highlighted heading */
+
+.readex-hero h1 span {
+    color: var(--readex-primary);
+}
+
+
+/* Description */
+
+.readex-hero p {
+    max-width: 620px;
+
+    margin: 0 auto 2rem;
+
+    color: var(--readex-text-muted);
+
+    font-size: 1.1rem;
+
+    line-height: 1.7;
+}
+
+
+/* Hero buttons */
+
+.readex-hero-actions {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 0.75rem;
+
+    flex-wrap: wrap;
+}
+
+
+.readex-btn-primary {
+    background-color: var(--readex-primary);
+
+    border: 2px solid var(--readex-primary);
+
+    color: #ffffff;
+
+    padding: 0.75rem 1.5rem;
+
+    font-weight: 600;
+
+    border-radius: var(--readex-radius-sm);
+
+    transition:
+        background-color var(--readex-transition),
+        transform var(--readex-transition);
+}
+
+
+.readex-btn-primary:hover {
+    background-color: var(--readex-primary-dark);
+
+    border-color: var(--readex-primary-dark);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+.readex-btn-secondary {
+    background-color: transparent;
+
+    border: 2px solid var(--readex-border);
+
+    color: var(--readex-text);
+
+    padding: 0.75rem 1.5rem;
+
+    font-weight: 600;
+
+    border-radius: var(--readex-radius-sm);
+
+    transition:
+        background-color var(--readex-transition),
+        border-color var(--readex-transition),
+        transform var(--readex-transition);
+}
+
+
+.readex-btn-secondary:hover {
+    background-color: #ffffff;
+
+    border-color: var(--readex-primary);
+
+    color: var(--readex-primary);
+
+    transform: translateY(-2px);
+}

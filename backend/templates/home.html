@@ -6,18 +6,40 @@ Home | Readex
 
 {% block content %}
 
-<div class="text-center">
+<section class="readex-hero">
 
-    <h1 class="display-4">📚 Welcome to Readex</h1>
+    <div class="readex-hero-content">
 
-    <p class="lead">
-        Your personal ebook library built with Django and Docker.
-    </p>
+        <span class="readex-hero-label">
+            📚 YOUR DIGITAL LIBRARY
+        </span>
 
-    <a href="/books/" class="btn btn-primary btn-lg">
-        Browse Books
-    </a>
+        <h1>
+            Discover your next
+            <span>great read.</span>
+        </h1>
 
-</div>
+        <p>
+            Explore your personal collection of ebooks,
+            discover new stories, and enjoy reading in one simple place.
+        </p>
+
+        <div class="readex-hero-actions">
+
+            <a href="{% url 'books:list' %}" class="btn readex-btn-primary">
+                Browse Books
+            </a>
+
+            {% if not user.is_authenticated %}
+                <a href="{% url 'users:register' %}" class="btn readex-btn-secondary">
+                    Create an Account
+                </a>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</section>
 
 {% endblock %}
