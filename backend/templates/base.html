@@ -19,66 +19,91 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
+<nav class="navbar navbar-expand-lg readex-navbar">
+    <div class="container">
 
-            <a class="navbar-brand" href="{% url 'core:home' %}">📚 Readex</a>
+        <a class="navbar-brand readex-brand" href="{% url 'core:home' %}">
+            <span class="readex-brand-icon">📚</span>
+            Readex
+        </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
 
-                <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
 
-            </button>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNav">
 
-                <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link readex-nav-link"
+                       href="{% url 'core:home' %}">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link readex-nav-link"
+                       href="{% url 'books:list' %}">
+                        Books
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link readex-nav-link"
+                       href="{% url 'core:contact' %}">
+                        Contact
+                    </a>
+                </li>
+
+                {% if user.is_authenticated %}
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'core:contact' %}">
-                            Contact
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'core:home' %}">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'books:list' %}">Books</a>
-                    </li>
-
-                    {% if user.is_authenticated %}
-
-
-                    <li class="nav-item">
-                        <span class="navbar-text me-3">
+                        <span class="navbar-text readex-user">
                             Hello, {{ user.username }}
                         </span>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users:logout' %}">Logout</a>
+                        <a class="nav-link readex-nav-link"
+                           href="{% url 'users:logout' %}">
+                            Logoutttttttt
+                        </a>
                     </li>
 
-                    {% else %}
+                {% else %}
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users:login' %}">Login</a>
+                        <a class="nav-link readex-nav-link"
+                           href="{% url 'users:login' %}">
+                            Login
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users:register' %}">Register</a>
+                        <a class="nav-link readex-register"
+                           href="{% url 'users:register' %}">
+                            Register
+                        </a>
                     </li>
 
-                    {% endif %}
+                {% endif %}
 
-                </ul>
-
-            </div>
+            </ul>
 
         </div>
-    </nav>
 
+    </div>
+</nav>
     <!-- Main Content -->
     <main class="container my-5">
 

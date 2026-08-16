@@ -93,7 +93,54 @@ a:hover {
    NAVBAR
    ========================================= */
 
-.navbar-brand {
+.readex-navbar {
+    background-color: var(--readex-primary-dark);
+    padding: 0.9rem 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.readex-brand {
+    color: #ffffff !important;
+    font-size: 1.35rem;
     font-weight: 700;
     letter-spacing: 0.3px;
+}
+
+.readex-brand-icon {
+    margin-right: 0.35rem;
+}
+
+.readex-nav-link {
+    color: rgba(255, 255, 255, 0.82) !important;
+    font-weight: 500;
+    margin-left: 0.35rem;
+    margin-right: 0.35rem;
+    transition: color var(--readex-transition);
+}
+
+.readex-nav-link:hover {
+    color: var(--readex-accent) !important;
+}
+
+.readex-user {
+    color: rgba(255, 255, 255, 0.7) !important;
+    margin-left: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.readex-register {
+    background-color: var(--readex-accent);
+    color: #ffffff !important;
+    font-weight: 600;
+    border-radius: var(--readex-radius-sm);
+    padding: 0.45rem 0.9rem !important;
+    margin-left: 0.5rem;
+    transition:
+        background-color var(--readex-transition),
+        transform var(--readex-transition);
+}
+
+.readex-register:hover {
+    background-color: #b38e1f;
+    transform: translateY(-1px);
 }
