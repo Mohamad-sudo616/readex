@@ -42,4 +42,97 @@ Home | Readex
 
 </section>
 
+
+<!-- Featured Books -->
+<section class="readex-featured">
+
+    <div class="readex-section-heading">
+        <div>
+            <span class="readex-section-label">
+                EXPLORE THE LIBRARY
+            </span>
+
+            <h2>Featured Books</h2>
+        </div>
+
+        <a href="{% url 'books:list' %}" class="readex-view-all">
+            View all books →
+        </a>
+    </div>
+
+
+    {% if featured_books %}
+
+        <div class="row g-4">
+
+            {% for book in featured_books %}
+
+                <div class="col-12 col-sm-6 col-lg-4">
+
+                    <article class="readex-book-card">
+
+                        {% if book.cover_image %}
+
+                            <a href="{% url 'books:detail' book.slug %}">
+                                <img
+                                    src="{{ book.cover_image.url }}"
+                                    alt="{{ book.title }}"
+                                    class="readex-book-cover"
+                                >
+                            </a>
+
+                        {% else %}
+
+                            <div class="readex-book-cover-placeholder">
+                                📚
+                            </div>
+
+                        {% endif %}
+
+
+                        <div class="readex-book-card-body">
+
+                            <h3 class="readex-book-title">
+                                <a href="{% url 'books:detail' book.slug %}">
+                                    {{ book.title }}
+                                </a>
+                            </h3>
+
+                            <p class="readex-book-author">
+                                {{ book.author }}
+                            </p>
+
+                            <a
+                                href="{% url 'books:detail' book.slug %}"
+                                class="readex-book-link"
+                            >
+                                View Book →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="readex-empty-state">
+            <div class="readex-empty-icon">📚</div>
+
+            <h3>No books yet</h3>
+
+            <p>
+                Your library is waiting for its first book.
+            </p>
+        </div>
+
+    {% endif %}
+
+</section>
+
 {% endblock %}
