@@ -6,69 +6,127 @@ Books | Readex
 
 {% block content %}
 
-<h1 class="mb-4">📚 Readex Library</h1>
+<section class="readex-books-page">
 
-<div class="row g-4">
+    <!-- Page Header -->
 
-{% for book in books %}
+    <div class="readex-books-header">
 
-<div class="col-md-4">
+        <div>
+            <span class="readex-section-label">
+                THE COLLECTION
+            </span>
 
-    <div class="card h-100 shadow-sm">
+            <h1>
+                Readex Library
+            </h1>
 
-        <img
-            src="{{ book.cover_image.url }}"
-            class="card-img-top"
-            alt="{{ book.title }}"
-            style="height:350px; object-fit:cover;">
-
-        <div class="card-body">
-
-            <h5 class="card-title">
-                {{ book.title }}
-            </h5>
-
-            <p class="text-muted">
-                {{ book.author }}
+            <p>
+                Explore the books in your collection.
             </p>
-
-            <p class="card-text">
-
-                {{ book.description|truncatewords:20 }}
-
-            </p>
-
         </div>
 
-        <div class="card-footer bg-white border-0">
-
-            <a href="{% url 'books:detail' book.slug %}"
-               class="btn btn-primary w-100">
-
-                View Details
-
-            </a>
-
+        <div class="readex-books-count">
+            {{ books|length }} books
         </div>
 
     </div>
 
-</div>
 
-{% empty %}
+    <!-- Books -->
 
-<div class="col-12">
+    {% if books %}
 
-    <div class="alert alert-info">
+        <div class="row g-4">
 
-        No books available yet.
+            {% for book in books %}
 
-    </div>
+                <div class="col-12 col-sm-6 col-lg-4">
 
-</div>
+                    <article class="readex-library-card">
 
-{% endfor %}
+                        <a
+                            href="{% url 'books:detail' book.slug %}"
+                            class="readex-library-cover-link"
+                        >
 
-</div>
+                            {% if book.cover_image %}
+
+                                <img
+                                    src="{{ book.cover_image.url }}"
+                                    alt="{{ book.title }}"
+                                    class="readex-library-cover"
+                                >
+
+                            {% else %}
+
+                                <div class="readex-library-cover-placeholder">
+                                    📚
+                                </div>
+
+                            {% endif %}
+
+                        </a>
+
+
+                        <div class="readex-library-card-body">
+
+                            <h2 class="readex-library-title">
+
+                                <a href="{% url 'books:detail' book.slug %}">
+                                    {{ book.title }}
+                                </a>
+
+                            </h2>
+
+
+                            <p class="readex-library-author">
+                                {{ book.author }}
+                            </p>
+
+
+                            <p class="readex-library-description">
+                                {{ book.description|truncatewords:20 }}
+                            </p>
+
+
+                            <a
+                                href="{% url 'books:detail' book.slug %}"
+                                class="readex-library-link"
+                            >
+                                View details →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="readex-library-empty">
+
+            <div class="readex-empty-icon">
+                📚
+            </div>
+
+            <h2>
+                Your library is empty
+            </h2>
+
+            <p>
+                There are no books available yet.
+            </p>
+
+        </div>
+
+    {% endif %}
+
+</section>
 
 {% endblock %}

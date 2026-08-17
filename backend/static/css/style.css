@@ -337,135 +337,423 @@ a:hover {
    FEATURED BOOKS
    ========================================= */
 
-.readex-featured {
-    padding: 5rem 0 2rem;
-}
-
-.readex-section-heading {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.readex-section-label {
-    display: block;
-    color: var(--readex-primary);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    margin-bottom: 0.5rem;
-}
-
-.readex-section-heading h2 {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.readex-view-all {
-    color: var(--readex-primary);
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.readex-view-all:hover {
-    color: var(--readex-primary-dark);
-}
+/* =========================================
+   MODERN BOOK CARDS
+   ========================================= */
 
 .readex-book-card {
     height: 100%;
-    background: #ffffff;
-    border: 1px solid var(--readex-border);
-    border-radius: var(--readex-radius);
-    overflow: hidden;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
-    transition:
-        transform var(--readex-transition),
-        box-shadow var(--readex-transition);
-}
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
 
-.readex-book-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
-}
+    box-shadow: none;
 
-.readex-book-cover {
-    display: block;
-    width: 100%;
-    height: 330px;
-    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.readex-book-card:hover .readex-book-cover {
-    transform: scale(1.02);
+.readex-book-card:hover {
+    transform: translateY(-5px);
 }
+
+
+/* Book cover */
+
+.readex-book-cover {
+    display: block;
+
+    width: 100%;
+    height: 360px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 16px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.readex-book-card:hover .readex-book-cover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Missing cover */
 
 .readex-book-cover-placeholder {
     width: 100%;
-    height: 330px;
+    height: 360px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     background: #f4f1e8;
-    font-size: 3rem;
+
+    border-radius: 10px;
+
+    font-size: 2.5rem;
+
+    box-shadow:
+        0 5px 16px rgba(0, 0, 0, 0.06);
 }
+
+
+/* Card information */
 
 .readex-book-card-body {
-    padding: 1.25rem;
+    padding: 1.15rem 0.25rem 0;
 }
 
+
+/* Title */
+
 .readex-book-title {
-    font-size: 1.15rem;
-    font-weight: 700;
+    font-size: 1.05rem;
+    font-weight: 650;
+
+    line-height: 1.35;
+
     margin-bottom: 0.35rem;
 }
 
 .readex-book-title a {
     color: var(--readex-text);
+
     text-decoration: none;
+
+    transition: color 0.2s ease;
 }
 
 .readex-book-title a:hover {
     color: var(--readex-primary);
 }
 
+
+/* Author */
+
 .readex-book-author {
     color: var(--readex-text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
+
+    font-size: 0.9rem;
+
+    margin-bottom: 0.7rem;
 }
+
+
+/* View book */
 
 .readex-book-link {
     color: var(--readex-primary);
-    font-size: 0.9rem;
-    font-weight: 600;
+
+    font-size: 0.82rem;
+
+    font-weight: 650;
+
     text-decoration: none;
+
+    letter-spacing: 0.1px;
+
+    transition: color 0.2s ease;
 }
 
 .readex-book-link:hover {
     color: var(--readex-primary-dark);
 }
 
-.readex-empty-state {
+
+
+
+/* =========================================
+   LIBRARY INTRODUCTION
+   ========================================= */
+
+.readex-library-intro {
     text-align: center;
-    padding: 4rem 1rem;
-    background: #fafafa;
-    border: 1px dashed var(--readex-border);
-    border-radius: var(--readex-radius);
+
+    max-width: 680px;
+
+    margin: 0 auto;
+
+    padding: 4.5rem 1rem 3rem;
 }
 
-.readex-empty-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.readex-library-intro h2 {
+    margin: 0 0 0.9rem;
+
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+
+    font-weight: 650;
+
+    letter-spacing: -0.5px;
+
+    line-height: 1.2;
 }
 
-.readex-empty-state h3 {
-    font-weight: 700;
-}
+.readex-library-intro p {
+    max-width: 560px;
 
-.readex-empty-state p {
+    margin: 0 auto;
+
     color: var(--readex-text-muted);
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+}
+
+
+/* Small editorial divider */
+
+.readex-intro-divider {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0.7rem;
+
+    margin-top: 2rem;
+}
+
+.readex-intro-divider span:first-child,
+.readex-intro-divider span:last-child {
+    width: 55px;
+
+    height: 1px;
+
+    background: var(--readex-border);
+}
+
+.readex-intro-divider span:nth-child(2) {
+    color: var(--readex-primary);
+
+    font-size: 0.45rem;
+}
+
+
+
+
+/* =========================================
+   BOOK LIST PAGE
+   ========================================= */
+
+.readex-books-page {
+    padding-bottom: 3rem;
+}
+
+
+/* Page header */
+
+.readex-books-header {
+    display: flex;
+
+    align-items: end;
+    justify-content: space-between;
+
+    gap: 2rem;
+
+    margin-bottom: 3rem;
+
+    padding-bottom: 1.5rem;
+
+    border-bottom: 1px solid var(--readex-border);
+}
+
+.readex-books-header h1 {
+    margin: 0 0 0.5rem;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    font-weight: 700;
+
+    letter-spacing: -0.8px;
+}
+
+.readex-books-header p {
+    margin: 0;
+
+    color: var(--readex-text-muted);
+}
+
+.readex-books-count {
+    color: var(--readex-text-muted);
+
+    font-size: 0.85rem;
+
+    white-space: nowrap;
+}
+
+
+/* Library card */
+
+.readex-library-card {
+    height: 100%;
+}
+
+.readex-library-cover-link {
+    display: block;
+
+    text-decoration: none;
+}
+
+.readex-library-cover {
+    display: block;
+
+    width: 100%;
+    height: 380px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 16px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.readex-library-card:hover .readex-library-cover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 26px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Missing cover */
+
+.readex-library-cover-placeholder {
+    width: 100%;
+    height: 380px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f4f1e8;
+
+    border-radius: 10px;
+
+    font-size: 2.5rem;
+}
+
+
+/* Card information */
+
+.readex-library-card-body {
+    padding: 1.15rem 0.25rem 0;
+}
+
+.readex-library-title {
+    margin: 0 0 0.35rem;
+
+    font-size: 1.1rem;
+
+    font-weight: 650;
+
+    line-height: 1.35;
+}
+
+.readex-library-title a {
+    color: var(--readex-text);
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.readex-library-title a:hover {
+    color: var(--readex-primary);
+}
+
+
+.readex-library-author {
+    margin-bottom: 0.75rem;
+
+    color: var(--readex-text-muted);
+
+    font-size: 0.9rem;
+}
+
+
+.readex-library-description {
+    margin-bottom: 0.75rem;
+
+    color: var(--readex-text-muted);
+
+    font-size: 0.88rem;
+
+    line-height: 1.6;
+}
+
+
+.readex-library-link {
+    color: var(--readex-primary);
+
+    font-size: 0.82rem;
+
+    font-weight: 650;
+
+    text-decoration: none;
+}
+
+.readex-library-link:hover {
+    color: var(--readex-primary-dark);
+}
+
+
+/* Empty state */
+
+.readex-library-empty {
+    text-align: center;
+
+    padding: 5rem 1rem;
+
+    border-top: 1px solid var(--readex-border);
+
+    border-bottom: 1px solid var(--readex-border);
+}
+
+.readex-library-empty h2 {
+    margin-bottom: 0.5rem;
+
+    font-weight: 650;
+}
+
+.readex-library-empty p {
+    margin: 0;
+
+    color: var(--readex-text-muted);
+}
+
+
+/* Mobile */
+
+@media (max-width: 576px) {
+
+    .readex-books-header {
+        align-items: start;
+
+        flex-direction: column;
+
+        margin-bottom: 2rem;
+    }
+
+    .readex-books-count {
+        font-size: 0.8rem;
+    }
+
 }
