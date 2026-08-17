@@ -330,3 +330,142 @@ a:hover {
 
     transform: translateY(-2px);
 }
+
+
+
+/* =========================================
+   FEATURED BOOKS
+   ========================================= */
+
+.readex-featured {
+    padding: 5rem 0 2rem;
+}
+
+.readex-section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.readex-section-label {
+    display: block;
+    color: var(--readex-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.5rem;
+}
+
+.readex-section-heading h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.readex-view-all {
+    color: var(--readex-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.readex-view-all:hover {
+    color: var(--readex-primary-dark);
+}
+
+.readex-book-card {
+    height: 100%;
+    background: #ffffff;
+    border: 1px solid var(--readex-border);
+    border-radius: var(--readex-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+    transition:
+        transform var(--readex-transition),
+        box-shadow var(--readex-transition);
+}
+
+.readex-book-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+}
+
+.readex-book-cover {
+    display: block;
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.readex-book-card:hover .readex-book-cover {
+    transform: scale(1.02);
+}
+
+.readex-book-cover-placeholder {
+    width: 100%;
+    height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f1e8;
+    font-size: 3rem;
+}
+
+.readex-book-card-body {
+    padding: 1.25rem;
+}
+
+.readex-book-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.readex-book-title a {
+    color: var(--readex-text);
+    text-decoration: none;
+}
+
+.readex-book-title a:hover {
+    color: var(--readex-primary);
+}
+
+.readex-book-author {
+    color: var(--readex-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.readex-book-link {
+    color: var(--readex-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.readex-book-link:hover {
+    color: var(--readex-primary-dark);
+}
+
+.readex-empty-state {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: #fafafa;
+    border: 1px dashed var(--readex-border);
+    border-radius: var(--readex-radius);
+}
+
+.readex-empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.readex-empty-state h3 {
+    font-weight: 700;
+}
+
+.readex-empty-state p {
+    color: var(--readex-text-muted);
+}
