@@ -757,3 +757,264 @@ a:hover {
     }
 
 }
+
+/* =========================================
+   BOOK DETAIL PAGE
+   ========================================= */
+
+.readex-book-detail {
+    padding-bottom: 4rem;
+}
+
+
+/* Cover */
+
+.readex-detail-cover-wrapper {
+    position: sticky;
+
+    top: 2rem;
+}
+
+.readex-detail-cover {
+    display: block;
+
+    width: 100%;
+    max-width: 420px;
+
+    margin: 0 auto;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.12);
+}
+
+.readex-detail-cover-placeholder {
+    width: 100%;
+    max-width: 420px;
+
+    aspect-ratio: 2 / 3;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+
+    background: #f4f1e8;
+
+    border-radius: 12px;
+
+    font-size: 3rem;
+}
+
+
+/* Main content */
+
+.readex-detail-content {
+    max-width: 720px;
+
+    padding-top: 1rem;
+}
+
+.readex-detail-title {
+    margin: 0.75rem 0 0.5rem;
+
+    font-size: clamp(2.3rem, 5vw, 4rem);
+
+    font-weight: 700;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.5px;
+}
+
+.readex-detail-author {
+    margin: 0;
+
+    color: var(--readex-text-muted);
+
+    font-size: 1.1rem;
+}
+
+
+/* Divider */
+
+.readex-detail-divider {
+    width: 60px;
+
+    height: 2px;
+
+    margin: 2rem 0;
+
+    background: var(--readex-primary);
+}
+
+
+/* Description */
+
+.readex-detail-description h2 {
+    margin-bottom: 1rem;
+
+    font-size: 1.1rem;
+
+    font-weight: 650;
+}
+
+.readex-detail-description p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: var(--readex-text-muted);
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+/* Actions */
+
+.readex-detail-actions {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 1rem;
+
+    margin-top: 2.5rem;
+}
+
+.readex-primary-button,
+.readex-secondary-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0.75rem;
+
+    min-height: 48px;
+
+    padding: 0.75rem 1.25rem;
+
+    border-radius: 7px;
+
+    font-size: 0.9rem;
+
+    font-weight: 650;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+/* Primary */
+
+.readex-primary-button {
+    color: #fff;
+
+    background: var(--readex-primary);
+}
+
+.readex-primary-button:hover {
+    color: #fff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Secondary */
+
+.readex-secondary-button {
+    color: var(--readex-text);
+
+    background: transparent;
+
+    border: 1px solid var(--readex-border);
+}
+
+.readex-secondary-button:hover {
+    color: var(--readex-text);
+
+    background: #f8f8f6;
+}
+
+
+/* Metadata */
+
+.readex-detail-meta {
+    margin-top: 3rem;
+
+    padding-top: 1.25rem;
+
+    border-top: 1px solid var(--readex-border);
+}
+
+.readex-meta-label {
+    display: block;
+
+    margin-bottom: 0.25rem;
+
+    color: var(--readex-text-muted);
+
+    font-size: 0.75rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+}
+
+.readex-meta-value {
+    color: var(--readex-text);
+
+    font-size: 0.9rem;
+}
+
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+    .readex-detail-cover-wrapper {
+        position: static;
+    }
+
+    .readex-detail-cover {
+        max-width: 320px;
+    }
+
+    .readex-detail-content {
+        padding-top: 0;
+    }
+
+    .readex-detail-title {
+        font-size: 2.3rem;
+
+        letter-spacing: -0.8px;
+    }
+
+    .readex-detail-actions {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .readex-primary-button,
+    .readex-secondary-button {
+        width: 100%;
+    }
+
+}
