@@ -1,7 +1,96 @@
-<h2>Register</h2>
+{% extends "base.html" %}
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Create Account</button>
-</form>
+{% block title %}
+Register | Readex
+{% endblock %}
+
+{% block content %}
+
+<section class="readex-auth-page">
+
+    <div class="readex-auth-card">
+
+        <div class="readex-auth-header">
+
+            <span class="readex-section-label">
+                JOIN READEX
+            </span>
+
+            <h1>
+                Create your account
+            </h1>
+
+            <p>
+                Create an account and start building your personal ebook library.
+            </p>
+
+        </div>
+
+
+        <form method="post" class="readex-auth-form">
+
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+
+                <div class="readex-form-error">
+                    {{ form.non_field_errors }}
+                </div>
+
+            {% endif %}
+
+
+            {% for field in form %}
+
+                <div class="readex-form-field">
+
+                    <label for="{{ field.id_for_label }}">
+                        {{ field.label }}
+                    </label>
+
+                    {{ field }}
+
+                    {% if field.help_text %}
+                        <div class="readex-field-help">
+                            {{ field.help_text|safe }}
+                        </div>
+                    {% endif %}
+
+                    {% if field.errors %}
+                        <div class="readex-field-error">
+                            {{ field.errors }}
+                        </div>
+                    {% endif %}
+
+                </div>
+
+            {% endfor %}
+
+
+            <button
+                type="submit"
+                class="readex-auth-button"
+            >
+                Create Account
+            </button>
+
+        </form>
+
+
+        <div class="readex-auth-footer">
+
+            <span>
+                Already have an account?
+            </span>
+
+            <a href="{% url 'users:login' %}">
+                Sign in
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
