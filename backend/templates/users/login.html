@@ -1,8 +1,103 @@
-<h2>Login</h2>
+{% extends "base.html" %}
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
+{% block title %}
+Login | Readex
+{% endblock %}
 
+{% block content %}
+
+<section class="readex-auth-page">
+
+    <div class="readex-auth-card">
+
+        <div class="readex-auth-header">
+
+            <span class="readex-section-label">
+                WELCOME BACK
+            </span>
+
+            <h1>
+                Sign in to Readex
+            </h1>
+
+            <p>
+                Continue exploring your personal ebook library.
+            </p>
+
+        </div>
+
+
+        <form method="post" class="readex-auth-form">
+
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+
+                <div class="readex-form-error">
+                    {{ form.non_field_errors }}
+                </div>
+
+            {% endif %}
+
+
+            <div class="readex-form-field">
+
+                <label for="{{ form.username.id_for_label }}">
+                    Username
+                </label>
+
+                {{ form.username }}
+
+                {% if form.username.errors %}
+                    <div class="readex-field-error">
+                        {{ form.username.errors }}
+                    </div>
+                {% endif %}
+
+            </div>
+
+
+            <div class="readex-form-field">
+
+                <label for="{{ form.password.id_for_label }}">
+                    Password
+                </label>
+
+                {{ form.password }}
+
+                {% if form.password.errors %}
+                    <div class="readex-field-error">
+                        {{ form.password.errors }}
+                    </div>
+                {% endif %}
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="readex-auth-button"
+            >
+                Sign in
+            </button>
+
+        </form>
+
+
+        <div class="readex-auth-footer">
+
+            <span>
+                Don't have an account?
+            </span>
+
+            <a href="{% url 'users:register' %}">
+                Create one
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
