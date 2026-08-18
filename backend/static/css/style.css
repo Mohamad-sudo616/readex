@@ -1281,3 +1281,30 @@ a:hover {
     margin: 0;
 }
 
+/* =========================================
+   NAVBAR USER STATE
+   ========================================= */
+
+.readex-nav-user {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.35rem;
+
+    padding: 0.5rem 0.75rem;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 0.85rem;
+}
+
+.readex-nav-user-label {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.readex-nav-logout {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+
+    padding-left: 1rem !important;
+}

@@ -67,20 +67,24 @@
 
                 {% if user.is_authenticated %}
 
-                    <li class="nav-item">
-                        <span class="navbar-text readex-user">
-                            Hello, {{ user.username }}
-                        </span>
-                    </li>
+    <li class="nav-item">
+        <span class="readex-nav-user">
+            <span class="readex-nav-user-label">Hello,</span>
+            {{ user.username }}
+        </span>
+    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link readex-nav-link"
-                           href="{% url 'users:logout' %}">
-                            Logoutttttttt
-                        </a>
-                    </li>
+    <li class="nav-item">
+        <a
+            class="nav-link readex-nav-logout"
+            href="{% url 'users:logout' %}"
+        >
+            Logout
+        </a>
+    </li>
 
-                {% else %}
+{% else %}
+
 
                     <li class="nav-item">
                         <a class="nav-link readex-nav-link"
